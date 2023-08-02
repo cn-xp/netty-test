@@ -8,5 +8,41 @@
     <artifactId>netty-test</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>netty-test</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>socket</module>
+    </modules>
+
+    <properties>
+        <netty.version>4.1.94.Final</netty.version>
+        <java.version>17</java.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- netty maven 依赖 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <encoding>utf-8</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
